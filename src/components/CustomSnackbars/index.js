@@ -5,12 +5,16 @@ import PropTypes from "prop-types";
 // @material-ui/core components
 import Snackbar from "@material-ui/core/Snackbar";
 
+import CustomAlert from "../CustomAlerts"
+
 export default function CustomSnackbar(props) {
   const { anchorOrigin, open, onClose, children } = props;
 
   return (
     <Snackbar anchorOrigin={anchorOrigin} open={open} onClose={onClose}>
-      {children}
+      <CustomAlert severity={severity}>
+        {children}
+      </CustomAlert>
     </Snackbar>
   );
 }
