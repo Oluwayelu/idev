@@ -45,11 +45,7 @@ const LandingPage = props => {
               <h1 className={classes.title}>Your Story Starts With Us.</h1>
               <h4>Demo</h4>
               <br />
-              <Button
-                href="/auth/login"
-                color="primary"
-                size="lg"
-              >
+              <Button href="/auth/login" color="primary" size="lg">
                 Join Us
               </Button>
             </GridItem>
