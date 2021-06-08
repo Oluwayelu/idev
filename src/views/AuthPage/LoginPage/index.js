@@ -1,43 +1,43 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { makeStyles } from "@material-ui/core/styles";
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+import { makeStyles } from '@material-ui/core/styles';
+import { FcGoogle } from 'react-icons/fc';
+import { FaGithub } from 'react-icons/fa';
 
-import Tabs from "../../../components/CustomTabs/Tabs";
-import GridItem from "../../../components/Grid/GridItem";
-import GridContainer from "../../../components/Grid/GridContainer";
-import Card from "../../../components/Cards/Card";
-import CardBody from "../../../components/Cards/CardBody.js";
-import CardHeader from "../../../components/Cards/CardHeader.js";
-import CardFooter from "../../../components/Cards/CardFooter.js";
-import CustomInput from "../../../components/CustomInput/CustomInput.js";
-import CustomButton from "../../../components/CustomButton";
+import Tabs from '../../../components/CustomTabs/Tabs';
+import GridItem from '../../../components/Grid/GridItem';
+import GridContainer from '../../../components/Grid/GridContainer';
+import Card from '../../../components/Cards/Card';
+import CardBody from '../../../components/Cards/CardBody.js';
+import CardHeader from '../../../components/Cards/CardHeader.js';
+import CardFooter from '../../../components/Cards/CardFooter.js';
+import CustomInput from '../../../components/CustomInput/CustomInput.js';
+import CustomButton from '../../../components/CustomButton';
 
 import {
   signInWIthGoogle,
   signInWithGithub,
   signInUser
-} from "../../../firebase/auth";
+} from '../../../firebase/auth';
 
-import styles from "../../../assets/js/views/AuthPageStyle/loginPageStyle";
+import styles from '../../../assets/js/views/AuthPageStyle/loginPageStyle';
 const useStyles = makeStyles(styles);
 
 const LoginPage = () => {
   const classes = useStyles();
-  const [cardAnimaton, setCardAnimation] = useState("cardHidden");
+  const [cardAnimaton, setCardAnimation] = useState('cardHidden');
   const [login, setLogin] = useState({
-    email: "",
-    password: ""
+    email: '',
+    password: ''
   });
-  setTimeout(function () {
-    setCardAnimation("");
+  setTimeout(function() {
+    setCardAnimation('');
   }, 700);
-  const onChange = (e) => {
+  const onChange = e => {
     setLogin({ ...login, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = e => {
     signInUser(login.email, login.password);
     e.preventDefault();
   };
@@ -50,10 +50,11 @@ const LoginPage = () => {
             <GridItem xs={12} sm={8} md={6}>
               <Card className={classes[cardAnimaton]}>
                 <form onSubmit={onSubmit}>
-                  <CardHeader color="warning" className={classes.cardHeader}>
-                    <h2>Login</h2>
+                  <CardHeader color="primary" className={classes.cardHeader}>
+                    <h2 className={classes.title}>Login</h2>
                     <Tabs
-                      tab={[{ label: "Client" }, { label: "Developers" }]}
+                      color="primary"
+                      tab={[{ label: 'Client' }, { label: 'Developers' }]}
                     />
                   </CardHeader>
                   <CardBody>
@@ -88,8 +89,8 @@ const LoginPage = () => {
                       }}
                       inputProps={{
                         onChange,
-                        type: "email",
-                        name: "email"
+                        type: 'email',
+                        name: 'email'
                       }}
                     />
                     <CustomInput
@@ -100,22 +101,30 @@ const LoginPage = () => {
                       }}
                       inputProps={{
                         onChange,
-                        name: "password",
-                        type: "password",
-                        autoComplete: "off"
+                        name: 'password',
+                        type: 'password',
+                        autoComplete: 'off'
                       }}
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <CustomButton
                       fullWidth
-                      color="github"
+                      color="primary"
                       size="lg"
                       type="submit"
                       onClick={onSubmit}
                     >
                       Login
                     </CustomButton>
+                  </CardFooter>
+                  <CardFooter>
+                    <GridContainer>
+                      <GridItem >
+                        <span>Don't have an account? <a href="/auth/register">Register</a> </span>
+                      </GridItem>
+                      <GridItem />
+                    </GridContainer>
                   </CardFooter>
                 </form>
               </Card>

@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from 'classnames';
 
 // @material-ui/core components
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import makeStyles from '@material-ui/core/styles/makeStyles';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 // core components
 
-import buttonStyle from "../../assets/js/components/buttonStyle";
+import buttonStyle from '../../assets/js/components/buttonStyle';
 
 const makeComponentStyles = makeStyles(() => ({
   ...buttonStyle
@@ -56,11 +56,11 @@ const CustomTabs = React.forwardRef((props, ref) => {
     <Tabs
       value={value}
       onChange={handleChange}
-      indicatorColor="primary"
-      textColor="primary"
+      indicatorColor={color}
+      textColor={color}
       centered
     >
-      {tab.map((t) => (
+      {tab.map(t => (
         <Tab label={t.label} />
       ))}
     </Tabs>
@@ -69,20 +69,20 @@ const CustomTabs = React.forwardRef((props, ref) => {
 
 CustomTabs.propTypes = {
   color: PropTypes.oneOf([
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "rose",
-    "white",
-    "facebook",
-    "twitter",
-    "google",
-    "github",
-    "transparent"
+    'primary',
+    'info',
+    'success',
+    'warning',
+    'danger',
+    'rose',
+    'white',
+    'facebook',
+    'twitter',
+    'google',
+    'github',
+    'transparent'
   ]),
-  size: PropTypes.oneOf(["sm", "lg"]),
+  size: PropTypes.oneOf(['sm', 'lg']),
   simple: PropTypes.bool,
   round: PropTypes.bool,
   fullWidth: PropTypes.bool,

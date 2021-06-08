@@ -10,7 +10,7 @@ import Parallax from '../../components/Parallax';
 import GridContainer from '../../components/Grid/GridContainer';
 import GridItem from '../../components/Grid/GridItem';
 import Button from '../../components/CustomButton';
-// import NavRightLinks from '../../components/Header/Navbar/NavRightLink';
+import NavRightLinks from '../../components/Navbar/NavRightLink';
 // import Footer from '../../components/Footer/Footer';
 // import Modal from '../../components/Modal/Modal';
 // import CreateProject from '../../components/Project/CreateProject';
@@ -20,6 +20,8 @@ import Button from '../../components/CustomButton';
 // import WorkSection from './Sections/WorkSection';
 // import TestimoniesSection from './Sections/TestimoniesSection';
 // import BlogSection from './Sections/BlogSection';
+
+import image from '../../assets/img/img2.jpg';
 
 const useStyles = makeStyles(styles);
 const LandingPage = props => {
@@ -32,13 +34,14 @@ const LandingPage = props => {
         routes={[]}
         brand="iDev"
         leftLinks={<NavLeftLinks />}
+        rightLinks={<NavRightLinks />}
         fixed
         changeColorOnScroll={{
           height: 200,
           color: 'dark'
         }}
       />
-      <Parallax filter>
+      <Parallax filter small>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
@@ -52,6 +55,12 @@ const LandingPage = props => {
           </GridContainer>
         </div>
       </Parallax>
+
+      <div className={classNames(classes.main)}>
+        <div className={classes.container}>
+          
+        </div>
+      </div>
     </div>
   );
 };

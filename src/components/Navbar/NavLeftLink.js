@@ -57,16 +57,6 @@ const NavLeftLinks = props => {
           Contact
         </Button>
       </ListItem>
-      <Button
-        block
-        round
-        fullwidth
-        size="lg"
-        href="/auth/login"
-        color="primary"
-      >
-        Join Us
-      </Button>
     </List>
   );
 };
