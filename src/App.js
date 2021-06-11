@@ -11,7 +11,7 @@ import 'firebaseui/dist/firebaseui.css';
 
 import LandingPage from './views/LandingPage';
 import AboutPage from './views/AboutPage';
-import ErrorPage from './views/ErroPage';
+import ErrorPage from './views/404Page';
 import TermsPage from './views/TermsPage';
 import LoginPage from './views/AuthPage/LoginPage';
 import RegisterPage from './views/AuthPage/RegisterPage';
