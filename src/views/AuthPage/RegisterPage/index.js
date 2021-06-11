@@ -59,7 +59,6 @@ const RegisterPage = () => {
                 <form onSubmit={onSubmit}>
                   <CardHeader color="warning" className={classes.cardHeader}>
                     <h2>Register</h2>
-                    <caption>Create a new account</caption>
                     <Tabs
                       tab={[{ label: "Client" }, { label: "Developers" }]}
                     />
@@ -152,6 +151,19 @@ const RegisterPage = () => {
                     >
                       Login
                     </CustomButton>
+                  </CardFooter>
+                   <CardFooter>
+                    <GridContainer>
+                      <GridItem>
+                        <span>
+                          Already have an account?{' '}
+                          <a className={classes.links} href="/auth/login">
+                            Login
+                          </a>{' '}
+                        </span>
+                      </GridItem>
+                      <GridItem />
+                    </GridContainer>
                   </CardFooter>
                 </form>
               </Card>

@@ -6,6 +6,9 @@ const landingPageStyle = {
     color: secondaryColor,
     ...container
   },
+  margin: {
+    marginTop: "150px"
+  },
   title: {
     ...title,
     display: 'inline-block',

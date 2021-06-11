@@ -4,13 +4,14 @@ import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { createBrowserHistory } from 'history';
 
-import React from "react"
+import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 
 import 'firebaseui/dist/firebaseui.css';
 
 import LandingPage from './views/LandingPage';
 import AboutPage from './views/AboutPage';
+import ErrorPage from './views/ErroPage';
 import TermsPage from './views/TermsPage';
 import LoginPage from './views/AuthPage/LoginPage';
 import RegisterPage from './views/AuthPage/RegisterPage';
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="/auth/login" component={LoginPage} />
           <Route path="/auth/register" component={RegisterPage} />
           <Route path="/terms&cond" component={TermsPage} />
+          <Route path="*" component={ErrorPage} />
         </Switch>
       </ThemeProvider>
     </Router>

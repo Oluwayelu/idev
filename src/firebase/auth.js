@@ -15,7 +15,7 @@ const signInUser = (email, password) => {
   auth
     .signInWithEmailAndPassword(email, password)
     .then((user) => {
-      console.log(user);
+      
     })
     .catch((e) => {
       console.log(e);

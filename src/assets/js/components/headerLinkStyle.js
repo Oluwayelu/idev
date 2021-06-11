@@ -14,15 +14,18 @@ const headerLinksStyle = theme => ({
     ...defaultFont,
     fontSize: '14px',
     margin: 0,
-    paddingLeft: '0',
+    textAlign: 'center',
+    paddingLeft: '150px',
     listStyle: 'none',
     paddingTop: '0',
     paddingBottom: '0',
-    color: 'inherit'
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '0'
+    }
   },
   listItem: {
     float: 'left',
-    color: primaryColor,
+    color: secondaryColor,
     position: 'relative',
     display: 'block',
     width: 'auto',
@@ -44,7 +47,7 @@ const headerLinksStyle = theme => ({
     padding: '0 !important'
   },
   navLink: {
-    color: primaryColor,
+    color: secondaryColor,
     position: 'relative',
     padding: '0.9375rem',
     fontWeight: '400',
@@ -56,8 +59,8 @@ const headerLinksStyle = theme => ({
     margin: '0px',
     display: 'inline-flex',
     '&:hover,&:focus': {
-      color: 'inherit',
-      background: grayColor
+      color: primaryColor,
+      background: secondaryColor
     },
     [theme.breakpoints.down('sm')]: {
       width: 'calc(100% - 30px)',

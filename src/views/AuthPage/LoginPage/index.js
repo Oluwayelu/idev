@@ -120,8 +120,13 @@ const LoginPage = () => {
                   </CardFooter>
                   <CardFooter>
                     <GridContainer>
-                      <GridItem >
-                        <span>Don't have an account? <a href="/auth/register">Register</a> </span>
+                      <GridItem>
+                        <span>
+                          Don't have an account?{' '}
+                          <a className={classes.links} href="/auth/register">
+                            Register
+                          </a>{' '}
+                        </span>
                       </GridItem>
                       <GridItem />
                     </GridContainer>

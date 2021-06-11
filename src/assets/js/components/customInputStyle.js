@@ -1,5 +1,6 @@
 import {
   primaryColor,
+  secondaryColor,
   dangerColor,
   successColor,
   defaultFont,
@@ -41,7 +42,7 @@ const customInputStyle = {
   },
   labelRoot: {
     ...defaultFont,
-    color: primaryColor + ' !important',
+    color: secondaryColor + ' !important',
     fontWeight: '400',
     fontSize: '14px',
     lineHeight: '1.42857',
@@ -66,7 +67,7 @@ const customInputStyle = {
     }
   },
   input: {
-    color: primaryColor,
+    color: secondaryColor,
     height: 'unset',
     '&,&::placeholder': {
       fontSize: '14px',
